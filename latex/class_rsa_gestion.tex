@@ -1,0 +1,268 @@
+\doxysection{Rsa\+Gestion Class Reference}
+\hypertarget{class_rsa_gestion}{}\label{class_rsa_gestion}\index{RsaGestion@{RsaGestion}}
+
+
+Classe permettant d\textquotesingle{}effectuer du chiffrement et du dechiffrement asymetrique de type RSA.  
+
+
+
+
+{\ttfamily \#include $<$Rsa\+Gestion.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_rsa_gestion_a2aa52ab434a12088ffaef110776c3824}{Rsa\+Gestion}} ()
+\item 
+\mbox{\hyperlink{class_rsa_gestion_a5fb38e56633c86c0ac7167b89f7ef633}{\texorpdfstring{$\sim$}{\string~}\+Rsa\+Gestion}} ()
+\begin{DoxyCompactList}\small\item\em Desctruteur de la classe Rsa\+GEstion Ne fait aucune action. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rsa_gestion_a9ffcc0870bb630872a63f5bd57218db2}{Rsa\+Gestion}} (const \mbox{\hyperlink{class_rsa_gestion}{Rsa\+Gestion}} \&rsagestion)
+\begin{DoxyCompactList}\small\item\em Operateur de copie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rsa_gestion}{Rsa\+Gestion}} \& \mbox{\hyperlink{class_rsa_gestion_aed6cf9b9db5aa8585a104d4a56c2cdc7}{operator=}} (const \mbox{\hyperlink{class_rsa_gestion}{Rsa\+Gestion}} \&rsagestion)
+\begin{DoxyCompactList}\small\item\em Operateur d\textquotesingle{}affectation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_rsa_gestion_a1e44b42179ac685707de022180491b52}{generation\+Clef}} (std\+::string nom\+Chemin\+Public, std\+::string nom\+Chemin\+Prive, unsigned int taille)
+\begin{DoxyCompactList}\small\item\em Generateur d\textquotesingle{}une paire de clefs (public et privee) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_rsa_gestion_a855e5a5e680e00fad4ea0ffb3b5e7043}{chiffrement\+Rsa}} (std\+::string donne\+Claire)
+\begin{DoxyCompactList}\small\item\em Chiffre des donnees a partir de la clef public de l\textquotesingle{}objet. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_rsa_gestion_af95929f6cd491bb4c6b0969fa28f7f1c}{dechiffrement\+Rsa}} (std\+::string message\+Chiffre)
+\begin{DoxyCompactList}\small\item\em Dechiffre des donnees a partir de la clef privee de l\textquotesingle{}objet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rsa_gestion_a230d432e05dd7c7866f9b32e843b60a6}{chargement\+Clefs\+Prive}} (std\+::string nom\+Ficher\+Prive)
+\begin{DoxyCompactList}\small\item\em Charge une clef privee dans l\textquotesingle{}objet depuis un fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rsa_gestion_a2b47936cc1192ef07c535235619809f1}{chargement\+Clefs}} (std\+::string Nom\+Fichier\+Public, std\+::string nom\+Ficher\+Prive)
+\begin{DoxyCompactList}\small\item\em Charge une paire de clefs depuis un fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rsa_gestion_ab259c6e670d97214efd55332554480e4}{chargement\+Clefs\+Public}} (std\+::string nom\+Ficher\+Public)
+\begin{DoxyCompactList}\small\item\em Charge une clef public dans l\textquotesingle{}objet depuis un fichier. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_rsa_gestion_ab2a298f35d8f7c81f6e9815e25025b4c}{dechiffre\+Fichier}} (std\+::string nom\+Fichier)
+\begin{DoxyCompactList}\small\item\em Dechiffre les donnes au format Base 64 contenu dans un fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rsa_gestion_a88ee4016dee30968daac5cc75ac511e1}{chiffre\+Dans\+Fichier}} (std\+::string donnee, std\+::string nom\+Fichier)
+\item 
+void \mbox{\hyperlink{class_rsa_gestion_a989ad88eaa4328599851e80fda3fff3f}{chiffrement\+Fichier}} (const std\+::string fichier\+Entree, const std\+::string fichier\+Sortie)
+\begin{DoxyCompactList}\small\item\em Chiffre en RSA un fichier et mais le resultats dans un fichier. \end{DoxyCompactList}\item 
+\Hypertarget{class_rsa_gestion_a24585960bddda4867bb163f175d8e92c}\label{class_rsa_gestion_a24585960bddda4867bb163f175d8e92c} 
+void {\bfseries dechiffrement\+Fichier} (const std\+::string fichier\+Entree, const std\+::string \&fichier\+Sortie)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe permettant d\textquotesingle{}effectuer du chiffrement et du dechiffrement asymetrique de type RSA. 
+
+C\textquotesingle{}est une classe simplifi 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_rsa_gestion_a2aa52ab434a12088ffaef110776c3824}\label{class_rsa_gestion_a2aa52ab434a12088ffaef110776c3824} 
+\index{RsaGestion@{RsaGestion}!RsaGestion@{RsaGestion}}
+\index{RsaGestion@{RsaGestion}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{RsaGestion()}{RsaGestion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Rsa\+Gestion\+::\+Rsa\+Gestion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Brief Constructeur de la classe \doxylink{class_rsa_gestion}{Rsa\+Gestion}
+
+Ne fait aucune acction \Hypertarget{class_rsa_gestion_a5fb38e56633c86c0ac7167b89f7ef633}\label{class_rsa_gestion_a5fb38e56633c86c0ac7167b89f7ef633} 
+\index{RsaGestion@{RsaGestion}!````~RsaGestion@{\texorpdfstring{$\sim$}{\string~}RsaGestion}}
+\index{````~RsaGestion@{\texorpdfstring{$\sim$}{\string~}RsaGestion}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RsaGestion()}{\string~RsaGestion()}}
+{\footnotesize\ttfamily Rsa\+Gestion\+::\texorpdfstring{$\sim$}{\string~}\+Rsa\+Gestion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desctruteur de la classe Rsa\+GEstion Ne fait aucune action. 
+
+\Hypertarget{class_rsa_gestion_a9ffcc0870bb630872a63f5bd57218db2}\label{class_rsa_gestion_a9ffcc0870bb630872a63f5bd57218db2} 
+\index{RsaGestion@{RsaGestion}!RsaGestion@{RsaGestion}}
+\index{RsaGestion@{RsaGestion}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{RsaGestion()}{RsaGestion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Rsa\+Gestion\+::\+Rsa\+Gestion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rsa_gestion}{Rsa\+Gestion}} \&}]{rsagestion }\end{DoxyParamCaption})}
+
+
+
+Operateur de copie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rsagestion} & \+: objet de type \doxylink{class_rsa_gestion}{Rsa\+Gestion} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_rsa_gestion_a2b47936cc1192ef07c535235619809f1}\label{class_rsa_gestion_a2b47936cc1192ef07c535235619809f1} 
+\index{RsaGestion@{RsaGestion}!chargementClefs@{chargementClefs}}
+\index{chargementClefs@{chargementClefs}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{chargementClefs()}{chargementClefs()}}
+{\footnotesize\ttfamily void Rsa\+Gestion\+::chargement\+Clefs (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Fichier\+Public,  }\item[{std\+::string}]{nom\+Ficher\+Prive }\end{DoxyParamCaption})}
+
+
+
+Charge une paire de clefs depuis un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+Ficher\+Prive} & chemin et nom du fichier conetenant la clef privee \\
+\hline
+{\em Nom\+Fichier\+Public} & chemin et nom du fichier contenant la clef public \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_rsa_gestion_a230d432e05dd7c7866f9b32e843b60a6}\label{class_rsa_gestion_a230d432e05dd7c7866f9b32e843b60a6} 
+\index{RsaGestion@{RsaGestion}!chargementClefsPrive@{chargementClefsPrive}}
+\index{chargementClefsPrive@{chargementClefsPrive}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{chargementClefsPrive()}{chargementClefsPrive()}}
+{\footnotesize\ttfamily void Rsa\+Gestion\+::chargement\+Clefs\+Prive (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Ficher\+Prive }\end{DoxyParamCaption})}
+
+
+
+Charge une clef privee dans l\textquotesingle{}objet depuis un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+Ficher\+Prive} & chemin et nom du fichier conetenant la clef privee \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_rsa_gestion_ab259c6e670d97214efd55332554480e4}\label{class_rsa_gestion_ab259c6e670d97214efd55332554480e4} 
+\index{RsaGestion@{RsaGestion}!chargementClefsPublic@{chargementClefsPublic}}
+\index{chargementClefsPublic@{chargementClefsPublic}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{chargementClefsPublic()}{chargementClefsPublic()}}
+{\footnotesize\ttfamily void Rsa\+Gestion\+::chargement\+Clefs\+Public (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Ficher\+Public }\end{DoxyParamCaption})}
+
+
+
+Charge une clef public dans l\textquotesingle{}objet depuis un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+Ficher\+Public} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_rsa_gestion_a88ee4016dee30968daac5cc75ac511e1}\label{class_rsa_gestion_a88ee4016dee30968daac5cc75ac511e1} 
+\index{RsaGestion@{RsaGestion}!chiffreDansFichier@{chiffreDansFichier}}
+\index{chiffreDansFichier@{chiffreDansFichier}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{chiffreDansFichier()}{chiffreDansFichier()}}
+{\footnotesize\ttfamily void Rsa\+Gestion\+::chiffre\+Dans\+Fichier (\begin{DoxyParamCaption}\item[{std\+::string}]{donnee,  }\item[{std\+::string}]{nom\+Fichier }\end{DoxyParamCaption})}
+
+\textbackslash{}brief\+Chiffre les donnees et met le resutlat dans un fichier
+
+
+\begin{DoxyParams}{Parameters}
+{\em donnee} & donnee a chiffrer \\
+\hline
+{\em nom\+Fichier} & nom du fichier accueillant les donnees chiffrees \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_rsa_gestion_a989ad88eaa4328599851e80fda3fff3f}\label{class_rsa_gestion_a989ad88eaa4328599851e80fda3fff3f} 
+\index{RsaGestion@{RsaGestion}!chiffrementFichier@{chiffrementFichier}}
+\index{chiffrementFichier@{chiffrementFichier}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{chiffrementFichier()}{chiffrementFichier()}}
+{\footnotesize\ttfamily void Rsa\+Gestion\+::chiffrement\+Fichier (\begin{DoxyParamCaption}\item[{const std\+::string}]{fichier\+Entree,  }\item[{const std\+::string}]{fichier\+Sortie }\end{DoxyParamCaption})}
+
+
+
+Chiffre en RSA un fichier et mais le resultats dans un fichier. 
+
+Le fichier peut-\/être un fichier binaire. ATTENTION \+: la taille du fichier est limitee. Ce type de chiffrement est utilise pour chiffrer des clefs ou des hash
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier\+Entree} & chemin/nom fichier d\textquotesingle{}entree (a chiffrer) \\
+\hline
+{\em fichier\+Sortie} & chemin/nom fichier chiffre \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_rsa_gestion_a855e5a5e680e00fad4ea0ffb3b5e7043}\label{class_rsa_gestion_a855e5a5e680e00fad4ea0ffb3b5e7043} 
+\index{RsaGestion@{RsaGestion}!chiffrementRsa@{chiffrementRsa}}
+\index{chiffrementRsa@{chiffrementRsa}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{chiffrementRsa()}{chiffrementRsa()}}
+{\footnotesize\ttfamily std\+::string Rsa\+Gestion\+::chiffrement\+Rsa (\begin{DoxyParamCaption}\item[{std\+::string}]{donne\+Claire }\end{DoxyParamCaption})}
+
+
+
+Chiffre des donnees a partir de la clef public de l\textquotesingle{}objet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em donne\+Claire} & \+: string correspondant aux donnees a chiffrer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string correspondant aux donnees chiffrees 
+\end{DoxyReturn}
+\Hypertarget{class_rsa_gestion_ab2a298f35d8f7c81f6e9815e25025b4c}\label{class_rsa_gestion_ab2a298f35d8f7c81f6e9815e25025b4c} 
+\index{RsaGestion@{RsaGestion}!dechiffreFichier@{dechiffreFichier}}
+\index{dechiffreFichier@{dechiffreFichier}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{dechiffreFichier()}{dechiffreFichier()}}
+{\footnotesize\ttfamily std\+::string Rsa\+Gestion\+::dechiffre\+Fichier (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Fichier }\end{DoxyParamCaption})}
+
+
+
+Dechiffre les donnes au format Base 64 contenu dans un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+Fichier} & string contenant le nom et le chmein du fichier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string donnee decodee 
+\end{DoxyReturn}
+\Hypertarget{class_rsa_gestion_af95929f6cd491bb4c6b0969fa28f7f1c}\label{class_rsa_gestion_af95929f6cd491bb4c6b0969fa28f7f1c} 
+\index{RsaGestion@{RsaGestion}!dechiffrementRsa@{dechiffrementRsa}}
+\index{dechiffrementRsa@{dechiffrementRsa}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{dechiffrementRsa()}{dechiffrementRsa()}}
+{\footnotesize\ttfamily std\+::string Rsa\+Gestion\+::dechiffrement\+Rsa (\begin{DoxyParamCaption}\item[{std\+::string}]{message\+Chiffre }\end{DoxyParamCaption})}
+
+
+
+Dechiffre des donnees a partir de la clef privee de l\textquotesingle{}objet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message\+Chiffre} & string correspondant aux donnees chiffrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string correspondant aux donnees dechiffree 
+\end{DoxyReturn}
+\Hypertarget{class_rsa_gestion_a1e44b42179ac685707de022180491b52}\label{class_rsa_gestion_a1e44b42179ac685707de022180491b52} 
+\index{RsaGestion@{RsaGestion}!generationClef@{generationClef}}
+\index{generationClef@{generationClef}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{generationClef()}{generationClef()}}
+{\footnotesize\ttfamily int Rsa\+Gestion\+::generation\+Clef (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Chemin\+Public,  }\item[{std\+::string}]{nom\+Chemin\+Prive,  }\item[{unsigned int}]{taille }\end{DoxyParamCaption})}
+
+
+
+Generateur d\textquotesingle{}une paire de clefs (public et privee) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+Chemin\+Public} & nom et chemin du fichier qui va contenir la clef public (au format PEM) \\
+\hline
+{\em nom\+Chemin\+Prive} & nom et chemin du fichier qui va contenir la clef privee (au format PEM) \\
+\hline
+{\em taile} & Taille de la clef a generer (souvant 1024 ou 2048) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_rsa_gestion_aed6cf9b9db5aa8585a104d4a56c2cdc7}\label{class_rsa_gestion_aed6cf9b9db5aa8585a104d4a56c2cdc7} 
+\index{RsaGestion@{RsaGestion}!operator=@{operator=}}
+\index{operator=@{operator=}!RsaGestion@{RsaGestion}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rsa_gestion}{Rsa\+Gestion}} \& Rsa\+Gestion\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rsa_gestion}{Rsa\+Gestion}} \&}]{rsagestion }\end{DoxyParamCaption})}
+
+
+
+Operateur d\textquotesingle{}affectation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rsagestion} & \+: objet de type \doxylink{class_rsa_gestion}{Rsa\+Gestion} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+objet de type \doxylink{class_rsa_gestion}{Rsa\+Gestion} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_rsa_gestion_8h}{Rsa\+Gestion.\+h}}\item 
+\mbox{\hyperlink{_rsa_gestion_8cpp}{Rsa\+Gestion.\+cpp}}\end{DoxyCompactItemize}

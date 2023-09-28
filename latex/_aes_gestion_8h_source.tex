@@ -1,0 +1,31 @@
+\doxysection{Aes\+Gestion.\+h}
+\hypertarget{_aes_gestion_8h_source}{}\label{_aes_gestion_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <aes.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <modes.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <filters.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <osrng.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <files.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_aes_gestion}{AesGestion}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ private\ :\ }
+\DoxyCodeLine{00018\ \ \ \ \ CryptoPP::byte\ aesKey[CryptoPP::AES::DEFAULT\_KEYLENGTH];}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_aes_gestion}{AesGestion}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_aes_gestion}{\string~AesGestion}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_aes_gestion_a99a23e788fed422cb353898f53557c24}{GenerateAESKey}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_aes_gestion_ac26303a1066c38be076480bd3dc4409f}{SaveAESKeyToFile}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_aes_gestion_a8e0a2fb3876166b53d5100a44a2ed9fe}{LoadAESKeyFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_aes_gestion_a64d8a72f4367dc915c3dffece6adc722}{EncryptFileAES256}}(\textcolor{keyword}{const}\ std::string\&\ inputFile,\ \textcolor{keyword}{const}\ std::string\&\ outputFile);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_aes_gestion_a55efc90fcce793fa645fdc6711154473}{DecryptFileAES256}}(\textcolor{keyword}{const}\ std::string\&\ inputFile,\ \textcolor{keyword}{const}\ std::string\&\ outputFile);}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+
+\end{DoxyCode}

@@ -1,0 +1,52 @@
+\doxysection{Rsa\+Gestion.\+h}
+\hypertarget{_rsa_gestion_8h_source}{}\label{_rsa_gestion_8h_source}\mbox{\hyperlink{_rsa_gestion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <istream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <rsa.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <files.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <pem\_common.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <pem.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <base64.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <osrng.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }CryptoPP;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rsa_gestion}{RsaGestion}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ private\ :\ }
+\DoxyCodeLine{00031\ \ \ \ \ RSA::PrivateKey\ clefPrive;}
+\DoxyCodeLine{00032\ \ \ \ \ RSA::PublicKey\ clefPublic;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ base64\_decode(std::string\&\ encoded\_message);}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ base64\_encode(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ public\ :}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Generation\ de\ la\ paire\ de\ clef\ RSA}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \textcolor{comment}{/*Classe\ sous\ forme\ canonique*/}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_rsa_gestion_a2aa52ab434a12088ffaef110776c3824}{RsaGestion}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_rsa_gestion_a5fb38e56633c86c0ac7167b89f7ef633}{\string~RsaGestion}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_rsa_gestion_a2aa52ab434a12088ffaef110776c3824}{RsaGestion}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_rsa_gestion}{RsaGestion}}\&\ rsagestion);}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_rsa_gestion}{RsaGestion}}\&\ \mbox{\hyperlink{class_rsa_gestion_aed6cf9b9db5aa8585a104d4a56c2cdc7}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_rsa_gestion}{RsaGestion}}\&\ rsagestion);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rsa_gestion_a1e44b42179ac685707de022180491b52}{generationClef}}(std::string\ nomCheminPublic,\ std::string\ nomCheminPrive,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ taille);}
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{class_rsa_gestion_a855e5a5e680e00fad4ea0ffb3b5e7043}{chiffrementRsa}}(std::string\ donneClaire);}
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ \mbox{\hyperlink{class_rsa_gestion_af95929f6cd491bb4c6b0969fa28f7f1c}{dechiffrementRsa}}(std::string\ messageChiffre);}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rsa_gestion_a230d432e05dd7c7866f9b32e843b60a6}{chargementClefsPrive}}(std::string\ nomFicherPrive);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rsa_gestion_a2b47936cc1192ef07c535235619809f1}{chargementClefs}}(std::string\ NomFichierPublic,\ std::string\ nomFicherPrive\ );}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rsa_gestion_ab259c6e670d97214efd55332554480e4}{chargementClefsPublic}}(std::string\ nomFicherPublic);}
+\DoxyCodeLine{00053\ \ \ \ \ std::string\ \mbox{\hyperlink{class_rsa_gestion_ab2a298f35d8f7c81f6e9815e25025b4c}{dechiffreFichier}}(std::string\ nomFichier);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rsa_gestion_a88ee4016dee30968daac5cc75ac511e1}{chiffreDansFichier}}(std::string\ donnee,\ std::string\ nomFichier);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rsa_gestion_a989ad88eaa4328599851e80fda3fff3f}{chiffrementFichier}}(\textcolor{keyword}{const}\ std::string\ fichierEntree,\ \textcolor{keyword}{const}\ std::string\ \ fichierSortie);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ dechiffrementFichier(\textcolor{keyword}{const}\ std::string\ fichierEntree,\ \textcolor{keyword}{const}\ std::string\&\ fichierSortie);}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+
+\end{DoxyCode}

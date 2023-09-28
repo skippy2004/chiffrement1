@@ -1,0 +1,98 @@
+\doxysection{Aes\+Gestion Class Reference}
+\hypertarget{class_aes_gestion}{}\label{class_aes_gestion}\index{AesGestion@{AesGestion}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_aes_gestion_a99a23e788fed422cb353898f53557c24}{Generate\+AESKey}} ()
+\begin{DoxyCompactList}\small\item\em generation d\textquotesingle{}une clef AES Le resultat est mid dans un tbl octet privee \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_aes_gestion_ac26303a1066c38be076480bd3dc4409f}{Save\+AESKey\+To\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Sauvegarde de la clef dans un fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_aes_gestion_a8e0a2fb3876166b53d5100a44a2ed9fe}{Load\+AESKey\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Chargement de la clef depuis un fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_aes_gestion_a64d8a72f4367dc915c3dffece6adc722}{Encrypt\+File\+AES256}} (const std\+::string \&input\+File, const std\+::string \&output\+File)
+\begin{DoxyCompactList}\small\item\em Chiffre un fichier et met le resultat dans un autre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_aes_gestion_a55efc90fcce793fa645fdc6711154473}{Decrypt\+File\+AES256}} (const std\+::string \&input\+File, const std\+::string \&output\+File)
+\begin{DoxyCompactList}\small\item\em Dechiffre les donnees d\textquotesingle{}un fichier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_aes_gestion_a55efc90fcce793fa645fdc6711154473}\label{class_aes_gestion_a55efc90fcce793fa645fdc6711154473} 
+\index{AesGestion@{AesGestion}!DecryptFileAES256@{DecryptFileAES256}}
+\index{DecryptFileAES256@{DecryptFileAES256}!AesGestion@{AesGestion}}
+\doxysubsubsection{\texorpdfstring{DecryptFileAES256()}{DecryptFileAES256()}}
+{\footnotesize\ttfamily void Aes\+Gestion\+::\+Decrypt\+File\+AES256 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+File,  }\item[{const std\+::string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+Dechiffre les donnees d\textquotesingle{}un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & Fichier a dechiffrer \\
+\hline
+{\em output\+File} & Resultat du dechiffrement \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_aes_gestion_a64d8a72f4367dc915c3dffece6adc722}\label{class_aes_gestion_a64d8a72f4367dc915c3dffece6adc722} 
+\index{AesGestion@{AesGestion}!EncryptFileAES256@{EncryptFileAES256}}
+\index{EncryptFileAES256@{EncryptFileAES256}!AesGestion@{AesGestion}}
+\doxysubsubsection{\texorpdfstring{EncryptFileAES256()}{EncryptFileAES256()}}
+{\footnotesize\ttfamily void Aes\+Gestion\+::\+Encrypt\+File\+AES256 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+File,  }\item[{const std\+::string \&}]{output\+File }\end{DoxyParamCaption})}
+
+
+
+Chiffre un fichier et met le resultat dans un autre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & fichier contenant les donnees a chiffrer \\
+\hline
+{\em output\+File} & ficheir contenant les donnes chiffrees \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_aes_gestion_a99a23e788fed422cb353898f53557c24}\label{class_aes_gestion_a99a23e788fed422cb353898f53557c24} 
+\index{AesGestion@{AesGestion}!GenerateAESKey@{GenerateAESKey}}
+\index{GenerateAESKey@{GenerateAESKey}!AesGestion@{AesGestion}}
+\doxysubsubsection{\texorpdfstring{GenerateAESKey()}{GenerateAESKey()}}
+{\footnotesize\ttfamily void Aes\+Gestion\+::\+Generate\+AESKey (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+generation d\textquotesingle{}une clef AES Le resultat est mid dans un tbl octet privee 
+
+\Hypertarget{class_aes_gestion_a8e0a2fb3876166b53d5100a44a2ed9fe}\label{class_aes_gestion_a8e0a2fb3876166b53d5100a44a2ed9fe} 
+\index{AesGestion@{AesGestion}!LoadAESKeyFromFile@{LoadAESKeyFromFile}}
+\index{LoadAESKeyFromFile@{LoadAESKeyFromFile}!AesGestion@{AesGestion}}
+\doxysubsubsection{\texorpdfstring{LoadAESKeyFromFile()}{LoadAESKeyFromFile()}}
+{\footnotesize\ttfamily void Aes\+Gestion\+::\+Load\+AESKey\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Chargement de la clef depuis un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & nom du ficheir contenant la clef \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_aes_gestion_ac26303a1066c38be076480bd3dc4409f}\label{class_aes_gestion_ac26303a1066c38be076480bd3dc4409f} 
+\index{AesGestion@{AesGestion}!SaveAESKeyToFile@{SaveAESKeyToFile}}
+\index{SaveAESKeyToFile@{SaveAESKeyToFile}!AesGestion@{AesGestion}}
+\doxysubsubsection{\texorpdfstring{SaveAESKeyToFile()}{SaveAESKeyToFile()}}
+{\footnotesize\ttfamily void Aes\+Gestion\+::\+Save\+AESKey\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Sauvegarde de la clef dans un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \+: nom du fichier qui va contenir la clef \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Aes\+Gestion.\+h\item 
+Aes\+Gestion.\+cpp\end{DoxyCompactItemize}

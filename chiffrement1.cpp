@@ -47,7 +47,7 @@ int main()
         if (c == 2) {
             cout << "vous avez choisi un fichier" << endl;
             cout << endl;
-            cout << "merci de rentrée le nom du fichier avec sont type (merci de mettre tout le chemin depuis C: ou D:) : " << endl;
+            cout << "merci de rentrée le chemin et le nom du fichier : " << endl;
             cin >> fich;
             cout << endl;
             cout << "le fichier : " << fich << endl;
@@ -61,10 +61,71 @@ int main()
 
     }
     if (x == 2) {
-        cout << "pas encore developper" << endl;
+        int c;
+        int p;
+        string text = "";
+
+        string fichpublic = "";
+        string fichpriver = "";
+        string fichentrer = "";
+        string fichsortie = "";
 
         RsaGestion ha;
+        cout << "vous avez choisi SHA256" << endl;
 
+        cout << "(1) j'ai la clefs publique et je veut encoder un fichier" << endl << "(2) j'ai la clef publique et priver" << endl << "(3) je veut creer la clef publique et priver";
+        cin >> p;
+
+        if (p == 1) {
+            cout << "merci de rentrée le chemin et le nom du fichier contenent votre clef publique : " << endl;
+            cin >> fichpublic;
+            ha.chargementClefsPublic(fichpublic);
+
+
+        }
+        if (p == 2) {
+            cout << "merci de rentrée le chemin et le nom du fichier contenent votre clef publique : " << endl;
+            cin >> fichpublic;
+            ha.chargementClefsPublic(fichpublic);
+
+            cout << "merci de rentrée le chemin et le nom du fichier contenent votre clef publique : " << endl;
+            cin >> fichpriver;
+            ha.chargementClefsPrive(fichpriver);
+            
+        }
+        if (p == 3) {
+
+        }
+       
+
+
+        // /*
+        cout << "voulez-vous encoder(1) ou décoder(2) en Rsa : ";
+        cin >> c;
+
+        if (c == 1) {
+            cout << "vous avez choisi d'encoder" << endl;
+            cout << endl;
+
+            cout << "merci de rentrée le text : " << endl;
+            cin >> text;
+            cout << endl;
+            cout << "text : " << text << endl;
+            cout << "SHA256 : " << ha.CalculateSHA256(text) << endl;
+            ha.~RsaGestion();
+
+        }
+        if (c == 2) {
+            cout << "vous avez choisi de décoder" << endl;
+            cout << endl;
+
+            cout << "merci de rentrée le nom du fichier avec sont type (merci de mettre tout le chemin depuis C: ou D:) : " << endl;
+            cin >> fich;
+            cout << endl;
+            cout << "le fichier : " << fich << endl;
+            cout << "SHA256 : " << ha.CalculateFileSHA256(fich) << endl;
+            ha.~RsaGestion();
+            // */
     }
     if (x == 3) {
         cout << "pas encore developper" << endl;
