@@ -1,7 +1,7 @@
 /*****************************************************************//**
  * \file   RsaGestion.h
  * \brief  Decleration des attributs et des methods de la classe RsaGestion
- * 
+ *
  * \author Pierre
  * \date   June 2023
  *********************************************************************/
@@ -21,13 +21,13 @@ using namespace CryptoPP;
 
 /**
  * \brief Classe permettant d'effectuer du chiffrement et du dechiffrement asymetrique de type RSA.
- * 
+ *
  * C'est une classe simplifi
  */
 class RsaGestion
 {
 
-private : 
+private:
 	RSA::PrivateKey clefPrive;
 	RSA::PublicKey clefPublic;
 
@@ -35,7 +35,7 @@ private :
 	std::string base64_encode(const std::string& message);
 
 
-public :
+public:
 	// Generation de la paire de clef RSA
 	 /*Classe sous forme canonique*/
 	RsaGestion();
@@ -46,13 +46,13 @@ public :
 	int generationClef(std::string nomCheminPublic, std::string nomCheminPrive, unsigned int taille);
 	std::string chiffrementRsa(std::string donneClaire);
 	std::string dechiffrementRsa(std::string messageChiffre);
-	
+
 	void chargementClefsPrive(std::string nomFicherPrive);
-	void chargementClefs(std::string NomFichierPublic, std::string nomFicherPrive );
+	void chargementClefs(std::string NomFichierPublic, std::string nomFicherPrive);
 	void chargementClefsPublic(std::string nomFicherPublic);
 	std::string dechiffreFichier(std::string nomFichier);
 	void chiffreDansFichier(std::string donnee, std::string nomFichier);
-	void chiffrementFichier(const std::string fichierEntree, const std::string  fichierSortie);
-	void dechiffrementFichier(const std::string fichierEntree, const std::string& fichierSortie);
-};
+	void chiffrementFichier(const std::string fichierEntree, const std::string  fichierSortie, bool format64);
+	void dechiffrementFichier(const std::string fichierEntree, const std::string fichierSortie, bool format64);
 
+};

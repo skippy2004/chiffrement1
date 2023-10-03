@@ -1,4 +1,4 @@
-#include "cryptlib.h"
+ï»¿#include "cryptlib.h"
 #include "rijndael.h"
 #include "modes.h"
 #include "files.h"
@@ -55,13 +55,13 @@ int main()
 
             cout << "vous avez choisi SHA256" << endl;
 
-            cout << "voulez-vous hashé un text(1) ou un fichier(2)  (ou autre chiffre pour revenir a la page d'aceuil) : ";
+            cout << "voulez-vous hashï¿½ un text(1) ou un fichier(2)  (ou autre chiffre pour revenir a la page d'aceuil) : ";
             cin >> c;
 
             if (c == 1) {
                 cout << "vous avez choisi un text" << endl;
                 cout << endl;
-                cout << "merci de rentrée le text : " << endl;
+                cout << "merci de rentrï¿½e le text : " << endl;
                 cin >> text;
                 cout << endl;
                 cout << "text : " << text << endl;
@@ -72,7 +72,7 @@ int main()
             if (c == 2) {
                 cout << "vous avez choisi un fichier" << endl;
                 cout << endl;
-                cout << "merci de rentrée le chemin et le nom du fichier : " << endl;
+                cout << "merci de rentrï¿½e le chemin et le nom du fichier : " << endl;
                 cin >> fich;
                 cout << endl;
                 cout << "le fichier : " << fich << endl;
@@ -106,7 +106,7 @@ int main()
 
 
             if (p == 1) {
-                cout << "merci de rentrée le chemin et le nom du fichier contenent votre clef publique : " << endl;
+                cout << "merci de rentrï¿½e le chemin et le nom du fichier contenent votre clef publique : " << endl;
                 cin >> fichpublic;
                 ha.chargementClefsPublic(fichpublic);
 
@@ -114,22 +114,22 @@ int main()
                 cin >> c;
 
                 if (c == 1) {
-                    cout << "merci de rentrée le text a encoder : " << endl;
+                    cout << "merci de rentrï¿½e le text a encoder : " << endl;
                     cin >> text;
                     cout << "text encoder :" << endl << ha.chiffrementRsa(text) << endl;
                 }
                 if (c == 2) {
-                    cout << "merci de rentrée le chemin et le nom du fichier a encoder : " << endl;
+                    cout << "merci de rentrï¿½e le chemin et le nom du fichier a encoder : " << endl;
                     cin >> fichentrer;
-                    cout << "merci de rentrée le nom du fichier de sortie : " << endl;
+                    cout << "merci de rentrï¿½e le nom du fichier de sortie : " << endl;
                     cin >> fichsortie;
-                    ha.chiffrementFichier(fichentrer, fichsortie);
+                    ha.chiffrementFichier(fichentrer, fichsortie, 1);
                     cout << "chiffrement effectuer" << endl;
                 }
                 if (c == 3) {
-                    cout << "merci de rentrée le text a encoder : " << endl;
+                    cout << "merci de rentrï¿½e le text a encoder : " << endl;
                     cin >> text;
-                    cout << "merci de rentrée le nom du fichier de sortie : " << endl;
+                    cout << "merci de rentrï¿½e le nom du fichier de sortie : " << endl;
                     cin >> fichsortie;
                     ha.chiffreDansFichier(text, fichsortie);
                     cout << "chiffrement effectuer" << endl;
@@ -142,11 +142,11 @@ int main()
             }
             if (p == 2) {
 
-                cout << "merci de rentrée le chemin et le nom du fichier contenent votre clef publique : " << endl;
+                cout << "merci de rentrï¿½e le chemin et le nom du fichier contenent votre clef publique : " << endl;
                 cin >> fichpublic;
                 ha.chargementClefsPublic(fichpublic);
 
-                cout << "merci de rentrée le chemin et le nom du fichier contenent votre clef priver : " << endl;
+                cout << "merci de rentrï¿½e le chemin et le nom du fichier contenent votre clef priver : " << endl;
                 cin >> fichpriver;
                 ha.chargementClefsPrive(fichpriver);
 
@@ -159,22 +159,22 @@ int main()
                     cin >> c;
 
                     if (c == 1) {
-                        cout << "merci de rentrée le text a encoder : " << endl;
+                        cout << "merci de rentrï¿½e le text a encoder : " << endl;
                         cin >> text;
                         cout << "text encoder :" << endl << ha.chiffrementRsa(text) << endl;
                     }
                     if (c == 2) {
-                        cout << "merci de rentrée le chemin et le nom du fichier a encoder : " << endl;
+                        cout << "merci de rentrï¿½e le chemin et le nom du fichier a encoder : " << endl;
                         cin >> fichentrer;
-                        cout << "merci de rentrée le nom du fichier de sortie : " << endl;
-                        cin >> fichsortie;
-                        ha.chiffrementFichier(fichentrer, fichsortie);
+                        cout << "merci de rentrï¿½e le nom du fichier de sortie : " << endl;
+                        cin >> fichsortie; 
+                        ha.chiffrementFichier(fichentrer, fichsortie, 1);
                         cout << "chiffrement effectuer" << endl;
                     }
                     if (c == 3) {
-                        cout << "merci de rentrée le text a encoder : " << endl;
+                        cout << "merci de rentrï¿½e le text a encoder : " << endl;
                         cin >> text;
-                        cout << "merci de rentrée le nom du fichier de sortie : " << endl;
+                        cout << "merci de rentrï¿½e le nom du fichier de sortie : " << endl;
                         cin >> fichsortie;
                         ha.chiffreDansFichier("ca crain", fichsortie);
                         cout << "chiffrement effectuer" << endl;
@@ -190,20 +190,20 @@ int main()
                     cin >> c;
 
                     if (c == 1) {
-                        cout << "merci de rentrée le text a decoder : " << endl;
+                        cout << "merci de rentre le text a decoder : " << endl;
                         cin >> text;
                         cout << "text encoder :" << endl << ha.dechiffrementRsa(text) << endl;
                     }
                     if (c == 2) {
-                        cout << "merci de rentrée le chemin et le nom du fichier a decoder : " << endl;
+                        cout << "merci de rentre le chemin et le nom du fichier a decoder : " << endl;
                         cin >> fichentrer;
-                        cout << "merci de rentrée le nom du fichier de sortie : " << endl;
+                        cout << "merci de rentre le nom du fichier de sortie : " << endl;
                         cin >> fichsortie;
-                        ha.dechiffrementFichier(fichentrer, fichsortie);
+                        ha.dechiffrementFichier(fichentrer, fichsortie, 1);
                         cout << "dechiffrement effectuer" << endl;
                     }
                     if (c == 3) {
-                        cout << "merci de rentrée le chemin et le nom du fichier a decoder : " << endl;
+                        cout << "merci de rentrï¿½e le chemin et le nom du fichier a decoder : " << endl;
                         cin >> fichentrer;
                         cout << ha.dechiffreFichier(fichentrer) << endl;
                     }
@@ -215,11 +215,11 @@ int main()
                 }
             }
             if (p == 3) {
-                cout << "merci de rentrée le nom de votre fichier clef publique : " << endl;
+                cout << "merci de rentre le nom de votre fichier clef publique : " << endl;
                 cin >> fichpublic;
-                cout << "merci de rentrée le nom de votre fichier clef priver : " << endl;
+                cout << "merci de rentre le nom de votre fichier clef priver : " << endl;
                 cin >> fichpriver;
-                cout << "merci de rentrée la taille de votre cléf : " << endl;
+                cout << "merci de rentre la taille de votre clï¿½f : " << endl;
                 cin >> taille;
                 ha.generationClef(fichpublic, fichpriver, taille);
 
@@ -235,25 +235,25 @@ int main()
                     cin >> c;
 
                     if (c == 1) {
-                        cout << "merci de rentrée le text a encoder : " << endl;
+                        cout << "merci de rentre le text a encoder : " << endl;
                         cin >> text;
                         cout << "text encoder :" << endl << ha.chiffrementRsa(text) << endl;
                     }
                     if (c == 2) {
-                        cout << "merci de rentrée le chemin et le nom du fichier a encoder : " << endl;
+                        cout << "merci de rentre le chemin et le nom du fichier a encoder : " << endl;
                         cin >> fichentrer;
-                        cout << "merci de rentrée le nom du fichier de sortie : " << endl;
+                        cout << "merci de rentre le nom du fichier de sortie : " << endl;
                         cin >> fichsortie;
-                        ha.chiffrementFichier(fichentrer, fichsortie);
+                        ha.chiffrementFichier(fichentrer, fichsortie, 1);
                         cout << "chiffrement effectuer" << endl;
                     }
                     if (c == 3) {
-                        cout << "merci de rentrée le text a encoder : " << endl;
+                        cout << "merci de rentre le text a encoder : " << endl;
                         //cin >> text;
                         std::string message;
                         std::string fichier;
                         std::getline(std::cin >> std::ws, message);
-                        cout << "merci de rentrée le nom du fichier de sortie : " << endl;
+                        cout << "merci de rentre le nom du fichier de sortie : " << endl;
                         std::getline(std::cin >> std::ws, fichier);
 
 
@@ -271,20 +271,20 @@ int main()
                     cin >> c;
 
                     if (c == 1) {
-                        cout << "merci de rentrée le text a decoder : " << endl;
+                        cout << "merci de rentre le text a decoder : " << endl;
                         cin >> text;
                         cout << "text encoder :" << endl << ha.dechiffrementRsa(text) << endl;
                     }
                     if (c == 2) {
-                        cout << "merci de rentrée le chemin et le nom du fichier a decoder : " << endl;
+                        cout << "merci de rentre le chemin et le nom du fichier a decoder : " << endl;
                         cin >> fichentrer;
-                        cout << "merci de rentrée le nom du fichier de sortie : " << endl;
+                        cout << "merci de rentre le nom du fichier de sortie : " << endl;
                         cin >> fichsortie;
-                        ha.dechiffrementFichier(fichentrer, fichsortie);
+                        ha.dechiffrementFichier(fichentrer, fichsortie, 1);
                         cout << "dechiffrement effectuer" << endl;
                     }
                     if (c == 3) {
-                        cout << "merci de rentrée le chemin et le nom du fichier a decoder : " << endl;
+                        cout << "merci de rentre le chemin et le nom du fichier a decoder : " << endl;
                         cin >> fichentrer;
                         cout << ha.dechiffreFichier(fichentrer) << endl;
                     }
@@ -319,12 +319,12 @@ int main()
 
             if (c == 1) {
                 ha.GenerateAESKey();
-                cout << "merci de rentrée le chemin et le nom du fichier ou la clef serra sauvegarder : " << endl;
+                cout << "merci de rentre le chemin et le nom du fichier ou la clef serra sauvegarder : " << endl;
                 cin >> fichentrer;
                 ha.SaveAESKeyToFile(fichentrer);
             }
             if (c == 2) {
-                cout << "merci de rentrée le chemin et le nom du fichier contenent la clef :  : " << endl;
+                cout << "merci de rentre le chemin et le nom du fichier contenent la clef :  : " << endl;
                 cin >> fichentrer;
                 ha.LoadAESKeyFromFile(fichentrer);
             }
@@ -334,16 +334,16 @@ int main()
 
             if (p == 1) {
 
-                cout << "merci de rentrée le chemin et le nom du fichier a encrypter  : " << endl;
+                cout << "merci de rentre le chemin et le nom du fichier a encrypter  : " << endl;
                 cin >> fichentrer;
-                cout << "merci de rentrée le chemin et le nom du fichier de sortie : " << endl;
+                cout << "merci de rentre le chemin et le nom du fichier de sortie : " << endl;
                 cin >> fichsortie;
                 ha.EncryptFileAES256(fichentrer, fichsortie);
             }
             if (p == 2) {
-                cout << "merci de rentrée le chemin et le nom du fichier a decrypter :  : " << endl;
+                cout << "merci de rentre le chemin et le nom du fichier a decrypter :  : " << endl;
                 cin >> fichentrer;
-                cout << "merci de rentrée le chemin et le nom du fichier de sortie " << endl;
+                cout << "merci de rentre le chemin et le nom du fichier de sortie " << endl;
                 cin >> fichsortie;
                 ha.DecryptFileAES256(fichentrer, fichsortie);
             }
@@ -353,7 +353,7 @@ int main()
 
 
         }
-        if(x != 1 and x != 2 and x != 3 and x != 4){
+        if (x != 1 and x != 2 and x != 3 and x != 4) {
             cout << "merci de choisir l'option 1, 2, 3 ou 4." << endl;
         }
 
