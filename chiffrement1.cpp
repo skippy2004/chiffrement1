@@ -16,6 +16,7 @@ using namespace std;
 
 int main()
 {
+
     int x = 0;
     cout << "1/Hash    2/Rsa    3/Aes : ";
    cin >> x;
@@ -103,7 +104,7 @@ int main()
             cin >> fichpublic;
             ha.chargementClefsPublic(fichpublic);
 
-            cout << "(1) encoder un text" << endl << "(2) encoder dans un fichier" << endl << "(3) encoder un fichier " << endl << "(4) quitter " << endl;
+            cout << "(1) encoder un text" << endl << "(2) encoder dans un fichier" << endl << "(3) encoder un fichier " << endl;
             cin >> c;
 
             if (c == 1) {
@@ -148,7 +149,7 @@ int main()
 
 
             if (t == 1) {
-                cout << "(1) encoder un text" << endl << "(2) encoder dans un fichier" << endl << "(3) encoder un fichier " << endl << "(4) quitter " << endl;
+                cout << "(1) encoder un text" << endl << "(2) encoder dans un fichier" << endl << "(3) encoder un fichier " << endl;
                 cin >> c;
 
                 if (c == 1) {
@@ -179,7 +180,7 @@ int main()
             }
             if (t == 2) {
 
-                cout << "(1) decoder un text" << endl << "(2) decoder un fichier" << endl << "(3) decoder dans un fichier " << endl << "(4) quitter " << endl;
+                cout << "(1) decoder un text" << endl << "(2) decoder un fichier" << endl << "(3) decoder dans un fichier " << endl;
                 cin >> c;
 
                 if (c == 1) {
@@ -224,7 +225,7 @@ int main()
 
 
             if (t == 1) {
-                cout << "(1) encoder un text" << endl << "(2) encoder un fichier" << endl << "(3) encoder dans un fichier " << endl << "(4) quitter " << endl;
+                cout << "(1) encoder un text" << endl << "(2) encoder un fichier" << endl << "(3) encoder dans un fichier " << endl;
                 cin >> c;
 
                 if (c == 1) {
@@ -260,7 +261,7 @@ int main()
             }
             if (t == 2) {
 
-                cout << "(1) decoder un text" << endl << "(2) decoder un fichier" << endl << "(3) decoder dans un fichier " << endl << "(4) quitter " << endl;
+                cout << "(1) decoder un text" << endl << "(2) decoder un fichier" << endl << "(3) decoder dans un fichier " << endl;
                 cin >> c;
 
                 if (c == 1) {
@@ -322,7 +323,7 @@ int main()
             ha.LoadAESKeyFromFile(fichentrer);
         }
 
-        cout << "(1) encrypter" << endl << "(2) decrypter" << endl << "(3) quitter" << endl;
+        cout << "(1) encrypter" << endl << "(2) decrypter" << endl;
         cin >> p;
 
         if (p == 1) {
