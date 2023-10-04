@@ -76,20 +76,50 @@ void AesGestion::LoadAESKeyFromFile(const std::string& filename)
  */
 void AesGestion::EncryptFileAES256(const std::string& inputFile, const std::string& outputFile)
 {
+    // Générez un IV aléatoire
     AutoSeededRandomPool rng;
+    rng.GenerateBlock(this->iv, sizeof(this->iv));
 
-    rng.GenerateBlock(iv, sizeof(this->iv));
+    // IV BASE 64
+    // A COMMENTER
+    std::string ivBase64;
+    StringSource(this->iv, sizeof(this->iv), true,
+        new Base64Encoder(
+            new StringSink(ivBase64),
+            false // ne pas ajouter de saut de ligne
+        )
+    );
+    std::cout << "E+++++++" << ivBase64 << std::endl;
+    // Initialisez le chiffreur avec la clé et l'IV
     CBC_Mode<AES>::Encryption encryptor;
-    encryptor.SetKeyWithIV(this->aesKey, sizeof(this->aesKey), iv);
+    encryptor.SetKeyWithIV(this->aesKey, sizeof(this->aesKey), this->iv);
 
-    std::cout << inputFile.c_str() << std::endl;
+    // Lisez le contenu du fichier dans une chaîne de caractères
+    std::string fileContent;
     FileSource(inputFile.c_str(), true,
-        new StreamTransformationFilter(encryptor,
-            new FileSink(outputFile.c_str()), BlockPaddingSchemeDef::PKCS_PADDING)
+        new StringSink(fileContent)
     );
 
-    std::cout << "Fin chiffrement AES-256" << std::endl;
+    // Chiffre le fichier
+    std::string encryptedContent;
+    StringSource(fileContent, true,
+        new StreamTransformationFilter(encryptor,
+            new StringSink(encryptedContent)
+        )
+    );
+
+    // Ouvrez le fichier de sortie en mode binaire
+    std::ofstream file(outputFile.c_str(), std::ios::binary);
+
+    // IV en préfixe
+    file.write(reinterpret_cast<const char*>(this->iv), sizeof(this->iv));
+
+    //Donnee chiffre apres
+    file.write(encryptedContent.c_str(), encryptedContent.size());
+
+    std::cout << "Fichier chiffre avec IV en prefixe : " << outputFile << std::endl;
 }
+
 
 /**
  * \brief Dechiffre les donnees d'un fichier
@@ -99,14 +129,38 @@ void AesGestion::EncryptFileAES256(const std::string& inputFile, const std::stri
  */
 void AesGestion::DecryptFileAES256(const std::string& inputFile, const std::string& outputFile)
 {
+    // Ouvrez len binaire
+    std::ifstream input(inputFile.c_str(), std::ios::binary);
+
+    //on enelvee l'IV
+    input.read(reinterpret_cast<char*>(this->iv), sizeof(this->iv));
+
+    // IV BASE 64
+    // A COMMENTER
+    std::string ivBase64;
+    StringSource(this->iv, sizeof(this->iv), true,
+        new Base64Encoder(
+            new StringSink(ivBase64),
+            false // ne pas ajouter de saut de ligne
+        )
+    );
+    std::cout << "D+++++++" << ivBase64 << std::endl;
+
+    //Deplacement curseur
+    input.seekg(sizeof(this->iv));
+
+    // Initialiser
     CBC_Mode<AES>::Decryption decryptor;
     decryptor.SetKeyWithIV(this->aesKey, sizeof(this->aesKey), this->iv);
 
-    std::cout << inputFile.c_str() << std::endl;
-    FileSource(inputFile.c_str(), true,
+    // Ouvrer le fichier de sortie en mode binaire
+    //std::ofstream output(outputFile.c_str(), std::ios::binary);
+
+    //Lire le reste et dechiffre
+    FileSource(input, true,
         new StreamTransformationFilter(decryptor,
             new FileSink(outputFile.c_str()), BlockPaddingSchemeDef::PKCS_PADDING)
     );
 
-    std::cout << "Fin Dechiffrement  AES-256" << std::endl;
+    std::cout << "Fin Déchiffrement AES-256" << std::endl;
 }

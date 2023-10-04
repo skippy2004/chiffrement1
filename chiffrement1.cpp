@@ -16,6 +16,18 @@ using namespace std;
 
 int main()
 {
+    /*
+    AesGestion ha;
+   // ha.LoadAESKeyFromFile("testCLEF.aes");
+    
+    //ha.SaveAESKeyToFile("ClefPV.aes");
+    ha.LoadAESKeyFromFile("ClefPV.aes");
+    ha.EncryptFileAES256("testFichier.txt","pvdsds.cry");
+    ha.DecryptFileAES256("pv.cry", "secretfiled.txt");
+    */
+
+    ///*
+
     bool w = 1;
     while (w == 1) {
 
@@ -24,22 +36,7 @@ int main()
         int x = 0;
         cout << "1/Hash    2/Rsa    3/Aes    4/quitter : ";
         cin >> x;
-        /* int c = 0;
-         int p = 0;
-         int t = 0;
-         int taille = 0;
-         string text = "";
-
-         string fichpublic = "pu";
-         string fichpriver = "pr";
-         string fichentrer = "";
-         string fichsortie = "test.txt";
-
-         RsaGestion ha;
-
-         ha.chargementClefsPublic(fichpublic);
-         ha.chargementClefsPrive(fichpriver);
-         ha.chiffreDansFichier("ca crain", fichsortie);*/
+        
 
         if (x == 4) {
             w = 0;
@@ -110,7 +107,7 @@ int main()
                 cin >> fichpublic;
                 ha.chargementClefsPublic(fichpublic);
 
-                cout << "(1) encoder un text" << endl << "(2) encoder dans un fichier" << endl << "(3) encoder un fichier " << endl << "(3) je veut creer la clef publique et priver" << endl << "(ou autre chiffre pour revenir a la page d'aceuil)" << endl;
+                cout << "(1) encoder un text" << endl << "(2) encoder un fichier" << endl << "(3) encoder dans un fichier " << endl << "(3) je veut creer la clef publique et priver" << endl << "(ou autre chiffre pour revenir a la page d'aceuil)" << endl;
                 cin >> c;
 
                 if (c == 1) {
@@ -155,7 +152,7 @@ int main()
 
 
                 if (t == 1) {
-                    cout << "(1) encoder un text" << endl << "(2) encoder dans un fichier" << endl << "(3) encoder un fichier " << endl << "(3) je veut creer la clef publique et priver" << endl << "(ou autre chiffre pour revenir a la page d'aceuil)" << endl;
+                    cout << "(1) encoder un text" << endl << "(2) encoder un fichier" << endl << "(3) encoder dans un fichier " << endl << "(3) je veut creer la clef publique et priver" << endl << "(ou autre chiffre pour revenir a la page d'aceuil)" << endl;
                     cin >> c;
 
                     if (c == 1) {
@@ -358,5 +355,6 @@ int main()
         }
 
     }
+    //*/
     return 0;
 }

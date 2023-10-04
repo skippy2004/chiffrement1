@@ -7,7 +7,7 @@
 #include <filters.h>
 #include <osrng.h>
 #include <files.h>
-
+#include <base64.h>
 class AesGestion
 {
 
@@ -26,4 +26,3 @@ public:
 	void EncryptFileAES256(const std::string& inputFile, const std::string& outputFile);
 	void DecryptFileAES256(const std::string& inputFile, const std::string& outputFile);
 };
-
